@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 22:57:25 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/13 15:25:16 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/13 10:00:30 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/13 10:54:28 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_comb(void)
+void	rush00(int x, int y)
 {
-	char	arr[3];
+	int		a;
+	int		b;
 
-	arr[0] = '0';
-	while (arr[0] < '8')
+	a = 0;
+	b = 0;
+	while (a < x)
 	{
-		arr[1] = arr[0] + 1;
-		while (arr[1] < '9')
+		while (b < y)
 		{
-			arr[2] = arr[1] + 1;
-			while (arr[2] <= '9')
+			if (a == 0 && b == 0 || a == x && b == 0)
 			{
-				write (1, &arr[0], 3);
-				if (arr[0] != '7' || arr[1] != '8' || arr[2] != '9')
-				{
-					write (1, ", ", 2);
-				}
-				arr[2]++;
+				ft_putchar("o");
 			}
-			arr[1]++;
+			if (a > 1 && a < x && b == 0 || a > 1 && a < x && b == y)
+			{
+				ft_putchar("|");
+			}
+			if (a == 1 && b > 1 && b < y || a == x && b > 1 && b < y)
+			{
+				ft_putchar("-");
+			}
+			else if
+			{
+				ft_putchar(" ");
+			}
+			b++;
 		}
-		arr[0]++;
+		a++;
+	ft_putchar("\n");
 	}
 }
