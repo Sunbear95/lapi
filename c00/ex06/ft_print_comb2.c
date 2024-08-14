@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:32:28 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/13 18:32:32 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/14 11:35:22 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putchar(char *str, int strl)
 void	ft_print_comb(char *arr)
 {
 	char	arr2[2];
-	
+
 	arr2[0] = '0';
 	arr2[1] = '0';
 	while (arr2[0] <= '9')
@@ -31,7 +31,7 @@ void	ft_print_comb(char *arr)
 			ft_putchar(arr, 2);
 			ft_putchar(" ", 2);
 			ft_putchar (arr2, 2);
-			if (arr[0] != '9' || arr[1] != '8' || arr2[0] != '9' || arr2[1] != '9')
+			if (arr[0] != '9' || arr[1] != '8')
 			{
 				write (1, ", ", 2);
 			}
@@ -51,11 +51,16 @@ void	ft_print_comb2(void)
 	{
 		while (arr[1] <= '9')
 		{	
+			if (arr[0] == 9 && arr[1] == 8)
+			{
+				break ;
+			}
 			ft_print_comb(arr);
 			arr[1]++;
 		}
 		arr[0]++;
-		if 
+		if (arr[1] > '9')
+			arr[1] = 0;
 	}
 }
 
