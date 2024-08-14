@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:32:28 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/14 11:35:22 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/15 08:10:58 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,47 @@ void	ft_putchar(char *str, int strl)
 
 void	ft_print_comb(char *arr)
 {
-	char	arr2[2];
-
-	arr2[0] = '0';
-	arr2[1] = '0';
-	while (arr2[0] <= '9')
+	arr[2] = arr[0];
+	arr[3] = arr[2] + 1;
+	while (arr[2] <= '9')
 	{
-		arr2[1] = arr[1] +1;
-		while (arr2[1] <= '9')
+		while (arr[3] <= '9')
 		{
 			ft_putchar(arr, 2);
-			ft_putchar(" ", 2);
-			ft_putchar (arr2, 2);
-			if (arr[0] != '9' || arr[1] != '8')
+			ft_putchar(" ", 1);
+			ft_putchar(arr +2, 2);
+			if (arr[0] != '9' && arr[1] != '8')
 			{
 				write (1, ", ", 2);
 			}
-			arr2[1]++;
+			arr[3]++;
 		}
-		arr2[0]++;
+		arr[2]++;
+		arr[3] = '0';
 	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	arr[2];
+	char	arr[4];
 
 	arr[0] = '0';
-	arr[1] = '0';
 	while (arr[0] <= '9')
 	{
+		arr[1] = '0';
 		while (arr[1] <= '9')
 		{	
-			if (arr[0] == 9 && arr[1] == 8)
+			arr[2] = arr[0];
+			arr[3] = arr[2] + 1;
+			while (arr[2] <= '9')
 			{
-				break ;
+				ft_print_comb(arr);
 			}
-			ft_print_comb(arr);
 			arr[1]++;
 		}
 		arr[0]++;
-		if (arr[1] > '9')
-			arr[1] = 0;
 	}
+	ft_putchar("98 99", 5);
 }
 
 int	main(void)
