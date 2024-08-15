@@ -6,11 +6,11 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 11:41:22 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/14 14:17:39 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/15 19:17:30 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#
+#include <stdio.h>
 void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int	tempa;
@@ -21,22 +21,18 @@ void	ft_ultimate_div_mod(int *a, int *b)
 
 	a = &tempa;
 	b = &tempb;
-	printf("%d, %d",*a, *b);
+	printf("%d, %d\n",*a, *b);
 }
 
 int	main(void)
 {
-	int *x;
-	int *y;
 	int ten;
 	int five;
 
 	ten = 10;
 	five = 5;
 
-	x = &ten;
-	y = &five;
-	ft_ultimate_div_mod(*x, *y);
+	ft_ultimate_div_mod(&ten, &five);
 	
 	printf("%d, %d", ten, five);
 	return (0);

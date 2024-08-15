@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 17:46:46 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 03:05:42 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/15 16:53:10 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/15 17:18:29 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
-{
-	//int	*bat;
-	int	temp;
-	int	b;
+#include <unistd.h>
 
-	b = 0;
-	temp = 0;
+void ft_putnbr.c(int nb)
+{
 	
-	while (b < size/2)
-	{	
-		temp = tab[b];
-		tab[b] = tab[size -1 -b];
-		tab[size -1 -b] = temp;
-		b++;
-	}
-}

@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 17:46:46 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 03:05:42 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/15 10:24:10 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/15 13:43:30 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+int	swap(int *tab, int *bat, int size)
 {
-	//int	*bat;
-	int	temp;
-	int	b;
+	int	c;
+	int	i;
 
-	b = 0;
-	temp = 0;
-	
-	while (b < size/2)
-	{	
-		temp = tab[b];
-		tab[b] = tab[size -1 -b];
-		tab[size -1 -b] = temp;
-		b++;
+	while (i <= size)
+	{
+		c = *(tab + 1);
+		*tab = *bat;
+		*bat = c;
+		i++;
 	}
 }
+	
+void	ft_sort_in_tab(int *tab, int size)
+{
+	int	n;
+	int	i;
+	int	j;
+	int	*bat;
+	
+	n = 0;
+	j = 0;
+	*bat = &n;
+	while (n == size)
+	{
+		j = 0;
+		while (tab[n] < tab[j])
+		{
+			bat[n] = tab[j]			
+			j++;
+		}	
+		n++;
+	}
+	*tab = 
+

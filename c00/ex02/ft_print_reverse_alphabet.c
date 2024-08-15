@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 17:46:46 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 03:05:42 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/11 20:26:46 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/11 20:42:01 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
-{
-	//int	*bat;
-	int	temp;
-	int	b;
+#include <unistd.h>
 
-	b = 0;
-	temp = 0;
-	
-	while (b < size/2)
-	{	
-		temp = tab[b];
-		tab[b] = tab[size -1 -b];
-		tab[size -1 -b] = temp;
-		b++;
+void	ft_print_reverse_alphabet(void)
+{
+	char	a;
+
+	a = 'z';
+	while (a >= 'a')
+	{
+		write (1, &a, 1);
+		a--;
 	}
 }

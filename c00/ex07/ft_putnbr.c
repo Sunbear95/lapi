@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 18:42:14 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/13 20:19:27 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/15 11:54:45 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	arry_rev(char *str, int c)
 	}
 }
 
-int	min_nb(int nb_)
+void	min_nb(int nb_)
 {
 	int		m;
 	int		i;
 	char	u;
-	char	mnbar[11];
+	char	mnbar[12];
 
 	m = 0;
 	if (nb_ == -2147483648)
@@ -55,39 +55,37 @@ int	min_nb(int nb_)
 		ft_putchar("-", 1);
 		arry_rev(mnbar, m + 1);
 	}
-	return (0);
 }
 
-int	ft_putnbr(int nb)
-{	
+void	plus_nb(int nb)
+{
 	int		n;
 	int		k;
-	char	nbar[10];
+	char	nbar[11];
 	char	j;
 
-	nbar[0] = '0';
 	n = 0;
-	if (nb >= 0)
+	while (nb > 1)
 	{
-		while (nb > 1)
-		{
-			k = nb % 10;
-			j = k + '0';
-			nbar[n] = j;
-			n++;
-			nb = nb / 10;
-		}
-		arry_rev(nbar, n + 1);
+		k = nb % 10;
+		j = k + '0';
+		nbar[n] = j;
+		n++;
+		nb = nb / 10;
 	}
+	arry_rev(nbar, n);
+}
+
+void	ft_putnbr(int nb)
+{	
+	if (nb > 0)
+	{
+		plus_nb(nb);
+	}
+	else if (nb == 0)
+		write(1, "0", 1);
 	else
 	{
 		min_nb(nb);
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	ft_putnbr(-2147483648);
-	return (0);
 }

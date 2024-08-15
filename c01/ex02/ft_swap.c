@@ -6,11 +6,9 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 20:55:24 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/13 21:16:57 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/15 18:39:23 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -19,5 +17,4 @@ void	ft_swap(int *a, int *b)
 	c = *a;
 	*a = *b;
 	*b = c;
-	write (1, c, 1);
 }

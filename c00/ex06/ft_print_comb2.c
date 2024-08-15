@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 15:32:28 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/15 08:10:58 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/15 18:18:25 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,53 +17,36 @@ void	ft_putchar(char *str, int strl)
 	write (1, str, strl);
 }
 
-void	ft_print_comb(char *arr)
+void	inttochar(int n)
 {
-	arr[2] = arr[0];
-	arr[3] = arr[2] + 1;
-	while (arr[2] <= '9')
-	{
-		while (arr[3] <= '9')
-		{
-			ft_putchar(arr, 2);
-			ft_putchar(" ", 1);
-			ft_putchar(arr +2, 2);
-			if (arr[0] != '9' && arr[1] != '8')
-			{
-				write (1, ", ", 2);
-			}
-			arr[3]++;
-		}
-		arr[2]++;
-		arr[3] = '0';
-	}
+	char	m;
+	char	k;
+
+	m = n / 10 + '0';
+	k = n % 10 + '0';
+	write(1, &m, 1);
+	write(1, &k, 1);
 }
 
 void	ft_print_comb2(void)
 {
-	char	arr[4];
+	int	x;
+	int	y;
 
-	arr[0] = '0';
-	while (arr[0] <= '9')
+	x = 0;
+	y = 0;
+	while (x <= 98)
 	{
-		arr[1] = '0';
-		while (arr[1] <= '9')
-		{	
-			arr[2] = arr[0];
-			arr[3] = arr[2] + 1;
-			while (arr[2] <= '9')
-			{
-				ft_print_comb(arr);
-			}
-			arr[1]++;
+		y = x + 1;
+		while (y <= 99)
+		{
+			inttochar(x);
+			write(1, " ", 1);
+			inttochar(y);
+			if (x != 98 || y != 99)
+				write(1, ", ", 2);
+			y++;
 		}
-		arr[0]++;
+		x++;
 	}
-	ft_putchar("98 99", 5);
-}
-
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
 }
