@@ -6,20 +6,28 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:48:02 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/17 15:26:10 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 03:50:45 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char s1, char s2, unsigned int n)
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n && s1[i] == s2[i])
+	if (n == 0)
+		return (0);
+	else
 	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-			break ;
-		i++;
+		while (i < n - 1 && (s1[i] == s2[i]))
+		{
+			if (s1[i] == '\0' || s2[i] == '\0')
+				break ;
+			i++;
+		}
+		return (s1[i] - s2[i]);
 	}
-	return (s1[i] - se[i]);
 }
