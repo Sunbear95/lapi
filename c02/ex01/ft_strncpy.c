@@ -6,18 +6,21 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:29:38 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 22:09:37 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 00:39:22 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	m;
+	unsigned int	i;
 
-	m = 0;
-	a = 0;
-	while (m < n)
+	i = 0;
+	while (i < n)
 	{
-		*dest [m] = *src;
-	}		
+		if (src[i] == '\0')
+			break ;
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
 }

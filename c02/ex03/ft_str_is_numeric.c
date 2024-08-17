@@ -6,22 +6,23 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 15:54:22 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 22:07:45 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 01:18:07 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_numeric(char *str)
 {
 	int	a;
-	int	i;
 
-	a = 0;
+	a = 1;
 	while (a != '\0')
 	{
-		a = str[i];
-		if (a < 48 || a > 58)
+		a = *str;
+		if (a == 0)
+			return (1);
+		if (a < 48 || a > 57)
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

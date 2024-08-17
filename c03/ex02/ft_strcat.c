@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 16:17:35 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 01:51:10 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/17 15:28:02 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/17 16:09:51 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_str_is_lowercase(char *str)
-{
-	int	a;
 
-	a = 1;
-	while (a != 0)
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	
+	i = 1;
+	while (src[i] != '\0')
 	{
-		a = *str;
-		if (a == 0)
-			return (1);
-		if (a < 97 || a > 122)
-			return (0);
-		str++;
+		dest[j + 1 + i] = src[i];
+		while (dest[j] != '\0')
+			j++;
+		i++;
 	}
-	return (1);
+	dest[i + j + 1] = '\0';
+	return (dest);
 }

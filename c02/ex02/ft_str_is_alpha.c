@@ -6,24 +6,23 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 15:31:35 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 22:08:52 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 01:23:24 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
 	int	a;
-	int	i;
 
-	a = 0;
+	a = 1;
 	while (a != 0)
 	{
-		a = str[i];
-		if (a < 64 || (a > 91 && a < 96))
+		a = *str;
+		if (a == 0)
+			return (1);
+		if (a < 65 || (a < 97 && a > 90) || a > 122)
 			return (0);
-		else if (a > 123)
-			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

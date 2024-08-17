@@ -6,22 +6,23 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 16:29:21 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 22:02:39 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 01:55:20 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_uppercase(char *str)
 {
 	int	a;
-	int	i;
 
 	a = 1;
 	while (a != 0)
 	{
-		a = str[i];
-		if (a < 97 || a > 122)
+		a = *str;
+		if (a == 0)
+			return (1);
+		if (a < 65 || a > 90)
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }

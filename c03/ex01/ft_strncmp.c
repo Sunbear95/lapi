@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 16:17:35 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 01:51:10 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/17 13:48:02 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/17 15:26:10 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_str_is_lowercase(char *str)
-{
-	int	a;
 
-	a = 1;
-	while (a != 0)
+int	ft_strncmp(char s1, char s2, unsigned int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n && s1[i] == s2[i])
 	{
-		a = *str;
-		if (a == 0)
-			return (1);
-		if (a < 97 || a > 122)
-			return (0);
-		str++;
+		if (s1[i] == '\0' || s2[i] == '\0')
+			break ;
+		i++;
 	}
-	return (1);
+	return (s1[i] - se[i]);
 }

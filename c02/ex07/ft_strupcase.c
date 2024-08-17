@@ -6,24 +6,22 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 21:34:20 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 21:56:12 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 02:13:59 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	int	i;
 	int	n;
+	int	i;
 
-	n = 1;
 	i = 0;
+	n = 1;
 	while (n != 0)
 	{
 		n = str[i];
 		if (n > 96 && n < 123)
-		{
 			str[i] = n - 32;
-		}
 		i++;
 	}
 	return (str);

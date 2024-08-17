@@ -6,23 +6,23 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 20:45:22 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 21:59:14 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 02:05:13 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_printable(char *str)
 {
 	int	n;
-	int	i;
 
 	n = 1;
-	i = 0;
 	while (n != 0)
 	{
-		n = *str + i;
-		i++;
-		if (n < 32 && n > 0 || n == 127)
+		n = *str;
+		if (n == 0)
+			return (1);
+		if (n < 32 || n > 126)
 			return (0);
+		str++;
 	}
 	return (1);
 }

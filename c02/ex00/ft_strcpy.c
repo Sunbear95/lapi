@@ -6,16 +6,20 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 12:05:48 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 13:34:57 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 00:26:12 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	a;
+	int	i;
 
-	a = *src;
-	*src = *dest;
-	*dest = a;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 16:17:35 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 01:51:10 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/17 18:39:47 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/17 20:04:37 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_str_is_lowercase(char *str)
-{
-	int	a;
 
-	a = 1;
-	while (a != 0)
+char	*ft_strstr.c(char *str, char *to_find)
+{
+	int	i;
+	int	n;
+	int *p = NULL;
+
+	i = 0;
+	n = 0;
+	while(str[i] != to_find)
+		i++;
+		if(str[i] == '\0')
+			return (p);
+	while(to_fint[n] == '\0')
 	{
-		a = *str;
-		if (a == 0)
-			return (1);
-		if (a < 97 || a > 122)
-			return (0);
-		str++;
+		str[i + n] = to_find[n];
+		n++;
 	}
-	return (1);
+	return (str);
 }
