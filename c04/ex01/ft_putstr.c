@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 13:48:02 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 03:50:45 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/18 16:34:09 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/18 16:37:51 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
+#include <unistd.h>
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	else
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
 	{
-		while (i < n - 1 && (s1[i] == s2[i]))
-		{
-			if (s1[i] == '\0' || s2[i] == '\0')
-				break ;
-			i++;
-		}
-		return (s1[i] - s2[i]);
+		write (1, str, 1);
+		str++;
 	}
 }

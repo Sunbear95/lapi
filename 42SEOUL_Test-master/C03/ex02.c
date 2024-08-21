@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <memory.h>
+
 char* ft_strcat(char *s1, char *s2);
 void prepare_test(char* buffer)
 {
@@ -31,3 +32,4 @@ int main(void)
     do_test(text4, "SEOUL!!!!!");
     return 0;
 }
+

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 13:48:02 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 03:50:45 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/21 15:40:45 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/21 18:46:28 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	else
+	while(src[i] != 0 || i < size-1)
 	{
-		while (i < n - 1 && (s1[i] == s2[i]))
-		{
-			if (s1[i] == '\0' || s2[i] == '\0')
-				break ;
-			i++;
-		}
-		return (s1[i] - s2[i]);
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i + 1] = 0;
+	return (size);
 }

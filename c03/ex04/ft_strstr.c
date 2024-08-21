@@ -6,26 +6,53 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 18:39:47 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/17 20:04:37 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/18 14:47:51 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr.c(char *str, char *to_find)
+#include <stdio.h>
+#include <string.h>
+#include <memory.h>
+
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int	n;
-	int *p = NULL;
+	int	j;
 
 	i = 0;
-	n = 0;
-	while(str[i] != to_find)
-		i++;
-		if(str[i] == '\0')
-			return (p);
-	while(to_fint[n] == '\0')
+	j = 0;
+
+	while(str[i] != '\0')
 	{
-		str[i + n] = to_find[n];
-		n++;
+		while(str[i] == to_find[j])
+		{
+			j++;
+			if (to_find[j] == '\0')
+			{
+				i++;
+				return (&str[i]);
+			}
+		}
+		i++;
 	}
-	return (str);
+	if (str[i] == '\0')
+		return (0) ;
+}
+
+void do_test(char* str, char* to_find)
+{
+	printf("Your: %s\n", ft_strstr(str, to_find));
+	printf("CStdLib: %s\n", strstr(str, to_find));
+}
+
+int main(void)
+{
+    do_test("Hello 42 SEOUL!!! 42 is true?!", " ");
+    do_test("", "43");
+    do_test("", "");	    do_test("", "");
+    do_test("Hello 42 SEOUL!!! 4343434343?!", "");
+    do_test("Hello 42 SEOUL!!! 42 is true?!", "true?!");
+    do_test("Hello 42 SEOUL!!! 42 is true?!", "");
+    do_test("ASDF", "");
+    return 0;
 }

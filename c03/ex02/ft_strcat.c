@@ -13,8 +13,10 @@
 char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	j;
 	
-	i = 1;
+	i = 0;
+	j = 0;
 	while (src[i] != '\0')
 	{
 		dest[j + 1 + i] = src[i];

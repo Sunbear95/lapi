@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   queening.c                                         :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 10:17:56 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/21 14:32:37 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/21 15:25:08 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/21 18:25:08 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void queening(int i, char *arr2d)
+char	*ft_strcapitalize(char *str)
 {
-	int try;
+	int	i;
 
-	if (arr_check(i, try))
+	i = 0;
+	while (str[i + 1] != 0)
 	{
-		if(i == 4) //n 은 전역선언, 4x4일 때
+		if (str[0] < 123 && str[0] > 96)
+			str[0] -= 32;
+		else if ((str[i] == ' ' ||str[i] == '-' || str[i] == '+')
+				&& (str[i + 1] < 123 && str[i + 1] > 96))
+			str[i + 1] -= 32;
+		while (((str[i] < 91 && str[i] > 64) || (str[i] < 123 && str[i] > 96))
+			&& (str[i + 1] < 91 && str[i + 1] > 64))
 		{
-			printarr();
-			return ;
+			str[i + 1] += 32;
+			i++;
 		}
-		else
-		{
-			try = 1;
-			while (try <= 4)
-			{
-				queening(i + 1, arr2d);
-				try++;
-			}
-		}
+		i++;
 	}
+	return (str);
 }

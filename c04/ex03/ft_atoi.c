@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/17 13:48:02 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/18 03:50:45 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/18 21:42:49 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <unistd.h>
+int 
+int ft_pn(char *str)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (n == 0)
+	while (*str == (43 || 45))
+	{
+		if (*str == 45)
+			i++
+		str++;
+	}
+	if (i % 2 = 0)
 		return (0);
 	else
-	{
-		while (i < n - 1 && (s1[i] == s2[i]))
-		{
-			if (s1[i] == '\0' || s2[i] == '\0')
-				break ;
-			i++;
-		}
-		return (s1[i] - s2[i]);
-	}
+		return (1);
 }
+
+int ft_pl(char *str)
+{
+	
+int	ft_atoi(char *str)
+{
+

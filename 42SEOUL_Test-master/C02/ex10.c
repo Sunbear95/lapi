@@ -19,4 +19,4 @@ int main(void)
 	printf("%lu %s\n", strlcpy(text2_r, text2, 11), text2_r);
     return 0;
 }
-
+z

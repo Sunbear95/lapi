@@ -21,3 +21,5 @@ int main(void)
 	printf("Your: %d\t\tCStdLib: %d\n", ft_strcmp(text9, text10), strcmp(text9, text10));
     return 0;
 }
+
+
