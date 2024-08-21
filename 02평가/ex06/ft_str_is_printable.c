@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
+/*   By: dongwki2 <dongwki2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/21 21:29:41 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/14 09:17:08 by dongwki2          #+#    #+#             */
+/*   Updated: 2024/08/17 16:00:09 by dongwki2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-int 
-int ft_pn(char *str)
+int	ft_str_is_printable(char *str)
 {
-	while (*str == 43 || *str == 45))
-	{
-		if (*str == 45)
-			i++
-		str++;
-	if (i % 2 = 0)
-		return (0);
-	else
+	int		i;
+
+	i = 0;
+	if (str[0] == '\0')
 		return (1);
+	while (str[i] != 0)
+	{
+		if (str[i] < 32 || str[i] > 126)
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
-
-int ft_pl(char *str)
-{
-	
-int	ft_atoi(char *str)
-{
-	int	n;
-
-	n = ft_pl;
-	if(!ft_pn)
-		write(1, "-", 1);
-	
