@@ -9,3 +9,16 @@ int main(void)
 	for (int i = 2147395600; i <= 2147395700; i++)
 		printf("is_prime(%d) = %d\n", i, ft_is_prime(i));
 }
+
+int	ft_is_prime(int nb)
+{
+	int opti;
+
+	opti = 0;
+	while (opti * opti - 1 < nb)
+	{
+		if (nb % opti == 0)
+			return (0);
+	}
+	return (1);
+}

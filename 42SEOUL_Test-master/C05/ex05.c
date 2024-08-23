@@ -12,3 +12,17 @@ int main(void)
 	for (int i = 2147395598; i <= 2147395620; i++)
 		printf("sqrt(%d) = %d\n", i, ft_sqrt(i));
 }
+
+int	ft_sqrt(int nb)
+{
+	int	root;
+
+	root = 1;
+	while (root * root < nb + 1)
+	{
+		if (root * root == nb)
+			return (root);
+		root++;
+	}
+	return (0);
+}

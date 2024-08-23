@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:02:56 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 11:34:56 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/24 00:07:44 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/24 00:38:50 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str)
+int	ft_iterative_factorial(int nb)
 {
-	int		n;
-	char	nul;
+	int	fac;
 
-	nul = ' ';
-	n = 0;
-	while (nul != '\0')
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	fac = 1;
+	while (0 < nb)
 	{
-		nul = *(str + n);
-		n++;
+		fac = fac * nb;
+		nb--;
 	}
-	write (1, str, n);
+	return (fac);
 }

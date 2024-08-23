@@ -31,3 +31,34 @@ int main(void)
     do_test(text4, "SEOUL!!!!!", 16);
     return 0;
 }
+
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = ft_strlen(dest);
+	while (src[i] != '\0' && i < nb)
+	{
+		dest[j + i] = src[i];
+		i++;
+	}
+	while (i < nb)
+	{
+		dest[i + j] = '\0';
+		i++;
+	}
+	return (dest);
+}
+

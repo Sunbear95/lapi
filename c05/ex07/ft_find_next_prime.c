@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 20:47:24 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/15 18:37:07 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/24 03:14:38 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/24 03:23:05 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+int	 ft_find_next_prime(int nb)
 {
-	*********nbr = 42;
+	int	opti;
+	
+	if(nb < 2)
+		return (2);
+	opti = 2;
+	while(opti * opti < nb + 1)
+	{
+		if(nb % opti == 0)
+		{
+			opti = 1;
+			nb++;
+		}
+		opti++;
+	}
+	return (nb);
 }

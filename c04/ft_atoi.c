@@ -6,26 +6,26 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/22 23:11:53 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/24 02:41:40 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_isspace(char **str)
+void	ft_isspace(char *str)
 {	
-	while(**str == ' ' || **str == '\n' || **str == '\t' || **str == '\v' || **str == '\f' || **str == '\r')
-		(*str)++;
+	while(*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v' || *str == '\f' || *str == '\r')
+		str++;
 }
 
-int ft_pn(char **str)
+int ft_pn(char *str)
 {
 	int	count;
 
 	count = 0;
-	while (**str == '-' || **str == '+')
+	while (*str == '-' || *str == '+')
 	{
-		if (**str == '-')
+		if (*str == '-')
 			count++;
-		(*str)++;
+		str++;
 	}
 	if (count % 2 == 0)
 		return (0);
@@ -40,8 +40,8 @@ int	ft_atoi(char *str)
 	
 	min = 1;
 	n = 0;
-	ft_isspace(&str);
-	if(ft_pn(&str))
+	ft_isspace(str);
+	if(ft_pn(str))
 		min *= -1;
 	while (*str != 0)
 	{
@@ -57,5 +57,5 @@ int	ft_atoi(char *str)
 			return (n);
 		}
 	}
-	return (min*n);
+	return (0);
 }

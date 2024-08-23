@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 17:27:52 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/15 22:08:26 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/24 01:36:37 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/24 03:13:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_is_prime(int nb)
 {
-	int		n;
-	char	num;
+	int opti;
 
-	num = ' ';
-	n = 0;
-	while (num != '\0')
+	opti = 0;
+	while (opti * opti < nb + 1)
 	{
-		num = *(str + n);
-		n++;
+		if (nb % opti == 0)
+			return (0);
+		opti++;
 	}
-	return (--n);
+	return (1);
 }

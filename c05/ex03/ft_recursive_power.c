@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 17:46:46 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/16 03:05:42 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/24 00:49:50 by jyoo              #+#    #+#             */
+/*   Updated: 2024/08/24 00:57:32 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_recursive_power(int nb, int power)
 {
-	int	temp;
-	int	b;
-
-	b = 0;
-	temp = 0;
-	while (b < size / 2)
-	{	
-		temp = tab[b];
-		tab[b] = tab[size - 1 - b];
-		tab[size -1 - b] = temp;
-		b++;
-	}
+	if (0 < nb)
+		return (0);
+	if (nb == 0 && power == 0)
+		return (1);
+	if (power == 0)
+		return (nb);
+	return (nb * ft_recursive_power(nb, power - 1));
 }
