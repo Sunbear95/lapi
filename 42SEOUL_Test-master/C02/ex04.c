@@ -12,4 +12,19 @@ int main(void)
 	printf("%d\n", ft_str_is_lowercase("AaaAaaAaaZzzZzz"));
     return 0;
 }
+int	ft_str_is_lowercase(char *str)
+{
+	int	a;
 
+	a = 1;
+	while (a != 0)
+	{
+		a = *str;
+		if (a == 0)
+			return (1);
+		if (a < 97 || a > 122)
+			return (0);
+		str++;
+	}
+	return (1);
+}

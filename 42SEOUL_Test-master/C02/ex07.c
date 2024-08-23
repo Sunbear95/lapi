@@ -19,4 +19,19 @@ int main(void)
 	printf("%s\n", ft_strupcase(text7));
     return 0;
 }
+char	*ft_strupcase(char *str)
+{
+	int	n;
+	int	i;
 
+	i = 0;
+	n = 1;
+	while (n != 0)
+	{
+		n = str[i];
+		if (n > 96 && n < 123)
+			str[i] = n - 32;
+		i++;
+	}
+	return (str);
+}

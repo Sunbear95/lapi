@@ -12,4 +12,19 @@ int main(void)
 	printf("%d\n", ft_str_is_printable("AaaAaaAaaZzzZzz"));
     return 0;
 }
+int	ft_str_is_printable(char *str)
+{
+	int	n;
 
+	n = 1;
+	while (n != 0)
+	{
+		n = *str;
+		if (n == 0)
+			return (1);
+		if (n < 32 || n > 126)
+			return (0);
+		str++;
+	}
+	return (1);
+}

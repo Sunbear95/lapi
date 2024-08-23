@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
+/*   By: dajikim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:29:38 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/22 10:34:33 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/19 01:45:50 by dajikim           #+#    #+#             */
+/*   Updated: 2024/08/22 00:47:25 by dajikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
+#include <stdbool.h>
 
-	i = 0;
-	while (src[i] != '\0' && i < n)
+int	ft_is_prime(int nb)
+{
+	int	f;
+
+	if (nb <= 1)
+		return (false);
+	f = 2;
+	while (f * f <= nb)
 	{
-		dest[i] = src[i];
-		i++;
+		if (nb % f == 0)
+			return (false);
+		f++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (true);
 }

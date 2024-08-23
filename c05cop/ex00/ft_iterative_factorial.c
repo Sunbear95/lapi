@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
+/*   By: dajikim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:29:38 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/22 10:34:33 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/19 00:50:30 by dajikim           #+#    #+#             */
+/*   Updated: 2024/08/22 00:43:34 by dajikim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_iterative_factorial(int nb)
 {
-	unsigned int	i;
+	int	f;
 
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	if (nb < 0)
+		return (0);
+	f = 1;
+	while (nb > 1)
+		f *= nb--;
+	return (f);
 }

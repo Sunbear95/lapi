@@ -6,73 +6,64 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 18:47:42 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/21 20:29:25 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/22 12:56:36 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-/*char	*ft_rev(char *str, int position)
+unsigned char	*offset_arr(unsigned char *str, int size)
 {
-	char	temp;
-	int		i;
+	int	i;
 
 	i = 0;
-	temp = 0;
-	while (i < position / 2)
+	while (i < size)
 	{
-		temp = str[i];
-		str[i] = str[position - 1 - i];
-		str[position - 1 - i] = temp ;
+		str[i] = 0;
 		i++;
 	}
 	return (str);
-}*/
+}
 
-char	*hex_str(char *str, int i, char *temp_arr)
-
+unsigned char	*hex_str(char *str, int i, unsigned char *temp_arr)
 {
-	char	hex[2];
-	int		position;
-	int		temp;
+	int				temp;
+	unsigned char	c;
 
-	hex[0] = '0';
-	hex[1] = '0';
-	temp = 0;
-	position = 0;
-	while (1)
-	{
-		temp = str[i] % 16;
-		if (temp < 10)
-			hex[position] = temp + '0';
-		else
-			hex[position] = 'A' + (temp - 10);
-		str[i] /= 16;
-		position ++;
-	}
-	temp_arr[0] = hex[1];
-	temp_arr[1] = hex[0];
+	c = str[i];
+	temp = c / 16;
+	if (temp < 10)
+		temp_arr[0] = temp + '0';
+	else
+		temp_arr[0] = 'a' + (temp - 10);
+	temp = c % 16;
+	if (temp < 10)
+		temp_arr[1] = temp + '0';
+	else
+		temp_arr[1] = 'a' + (temp - 10);
 	return (temp_arr);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
-	char	temp_arr[2];
-	char	*p;
+	int				i;
+	unsigned char	temp_arr[3];
 
-	temp_arr[0] = '0';
-	temp_arr[1] = '0';
 	i = 0;
+	offset_arr(temp_arr, 3);
 	while (str[i] != '\0')
 	{
 		if (str[i] < 32 || str[i] > 126)
 		{
-			p = hex_str(str, i, temp_arr);
+			offset_arr(temp_arr, 3);
+			hex_str(str, i, temp_arr);
 			write (1, "\\", 1);
-			write (1, p, 1);
-			write (1, p + 1, 1);
-			i++;
+			write (1, &temp_arr[0], 1);
+			write (1, &temp_arr[1], 1);
 		}
-		write (1, &str[i], 1);
+		else
+		{
+			write (1, &str[i], 1);
+		}
+		i++;
 	}
 }

@@ -6,33 +6,56 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/21 21:29:41 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/22 23:11:53 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-int 
-int ft_pn(char *str)
+void	ft_isspace(char **str)
+{	
+	while(**str == ' ' || **str == '\n' || **str == '\t' || **str == '\v' || **str == '\f' || **str == '\r')
+		*(str++);
+}
+
+int ft_pn(char **str)
 {
-	while (*str == 43 || *str == 45))
+	int	count;
+
+	count = 0;
+	while (**str == '-' || **str == '+')
 	{
-		if (*str == 45)
-			i++
-		str++;
-	if (i % 2 = 0)
+		if (**str == '-')
+			count++;
+		*(str++);
+	}
+	if (count % 2 == 0)
 		return (0);
 	else
 		return (1);
 }
-
-int ft_pl(char *str)
-{
 	
 int	ft_atoi(char *str)
 {
 	int	n;
-
-	n = ft_pl;
-	if(!ft_pn)
-		write(1, "-", 1);
+	int	min;
 	
+	min = 1;
+	n = 0;
+	ft_isspace(&str);
+	if(ft_pn(&str))
+		min *= -1;
+	while (*str != 0)
+	{
+		if(*str >= '0' && *str <= '9')
+		{
+			n = 10 * n + (*str - '0');
+			str++;
+		}
+		else
+		{
+			if (min == -1)
+				return (-1 * n);
+			return (n);
+		}
+	}
+	return (0);
+}

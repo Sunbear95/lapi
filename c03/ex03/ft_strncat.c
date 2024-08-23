@@ -10,18 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	i;
 
-	i = 1;
-	while (src[i] != '\0' || i < nb)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = ft_strlen(dest);
+	while (src[i] != '\0' && i < nb)
 	{
-		dest[j + 1 + i] = src[i];
-		while(dest[j] != '\0')
-			j++;
-		i++
+		dest[j + i] = src[i];
+		i++;
 	}
-	dest[i + j + 1] = '\0';
+	while (i < nb)
+	{
+		dest[i + j] = '\0';
+		i++;
+	}
 	return (dest);
 }

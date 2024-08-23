@@ -19,4 +19,18 @@ int main(void)
 	printf("%s\n", ft_strlowcase(text7));
     return 0;
 }
+char	*ft_strlowcase(char *str)
+{
+	int	n;
+	int	i;
 
+	i = 0;
+	n = 1;
+	while (str[i] != 0)
+	{
+		if (str[i] > 64 && str [i] < 91)
+			str[i] += 32;
+		i++;
+	}
+	return (str);
+}
