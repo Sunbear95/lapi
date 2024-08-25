@@ -1,46 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	while (*src)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (dest);
-}
-
-int	ft_strlen(char *str)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
 
+	if (max <= min)
+		return (0);
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char *ft_strjoin(int size, char **strs, char *sep)
-{
-	int		i;
-	char	*temp;
-	char	*arr; 
-	
-	i = 0;
-	while(*strs[i])
-		i++;
-	arr = (char *)malloc(sizeof(char) * (size * i + (i - 1) * ft_strlen(sep)));
-	temp = arr;
-	while (*strs)
+	*range = (int *)malloc(sizeof(int) * (max - min + 1));
+	while (i < (max - min))
 	{
-		ft_strcpy(arr, *strs);
-		ft_strcpy(arr, sep);
-		strs++;
+		(*range)[i] = min + i;
+		i++;
 	}
-	return (temp);
+	return (max - min);
 }
 
 void do_test(int min, int max)

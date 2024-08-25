@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 14:26:56 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/24 22:12:36 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/25 22:03:15 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	main(int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
 	ft_strcmp(argc, argv);
+	i = 1;
 	while (i < argc)
 	{
 		ft_putchar(argv[i], ft_strlen(argv[i]));

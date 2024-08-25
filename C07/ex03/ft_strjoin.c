@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 17:00:03 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/25 21:06:03 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/25 23:19:48 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,27 @@ int	ft_strlen(char *str)
 char *ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
+	int		num;
 	char	*temp;
 	char	*arr; 
 	
+	if(size <= 0)
+		return ("");
+	num = 0;
 	i = 0;
-	while(*strs[i])
-		i++;
-	arr = (char *)malloc(sizeof(char) * (size * i + (i - 1) * ft_strlen(sep) + 1));
-	temp = arr;
-	while (*strs)
+	while(i < size)
 	{
-		ft_strcpy(arr, *strs);
+		num += ft_strlen(strs[i]);
+		i++;
+	}
+	arr = (char *)malloc(sizeof(char) * (num + (i - 1) * ft_strlen(sep)));
+	temp = arr;
+	i = 0;
+	while (i < size)
+	{
+		ft_strcpy(arr, strs[i]);
 		ft_strcpy(arr, sep);
-		strs++;
+		i++;
 	}
 	return (temp);
 }
-

@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 char	*ft_strcpy(char *dest, char *src)
 {
+	printf("here");
 	while (*src)
 	{
 		*dest = *src;
 		dest++;
 		src++;
 	}
-	*dest = '\0';
+	//*dest = '\0';
 	return (dest);
 }
 
@@ -27,25 +29,34 @@ int	ft_strlen(char *str)
 char *ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
+	int		num;
 	char	*temp;
 	char	*arr; 
-	
-	i = 0;
-	while(*strs[i])
-		i++;
-	arr = (char *)malloc(sizeof(char) * (size * i + (i - 1) * ft_strlen(sep)));
-	temp = arr;
-	while (*strs)
+
+	if(size <= 0)
+		return ("");
+	num = 0;
+	i = -1;
+	while(++i < size)
 	{
-		ft_strcpy(arr, *strs);
-		ft_strcpy(arr, sep);
-		strs++;
+		num += ft_strlen(strs[i]);
 	}
+	arr = (char *)malloc(sizeof(char) * (num + (i - 1) * ft_strlen(sep) + 1));
+	temp = arr;
+	i = 0;
+	while (i < size)
+	{
+		ft_strcpy(arr, strs[i]);
+		ft_strcpy(arr, sep);
+		i++;
+	}
+	write(1, "hi", 2);
+	write(1, temp, 20);
 	return (temp);
 }
 
 void	do_test(int size, char **strs, char *sep)
-{
+{	
 	printf(" - Elements -\n[");
 	for (int i = 0; i < size; i++)
 	{
