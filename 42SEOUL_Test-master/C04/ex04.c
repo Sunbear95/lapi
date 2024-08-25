@@ -49,52 +49,78 @@ int main(void)
 	write(1, "\n", 1);
 	return 0;
 }
-void	ft_isspace(char *str)
-{	
-	while(*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v' || *str == '\f' || *str == '\r')
-		str++;
-}
-
-int ft_pn(char **str)
+int	ch_base(char *base)
 {
-	int	count;
+	int	i;
+	int	j;
 
-	count = 0;
-	while (**str == '-' || **str == '+')
+	i = 0;
+	while (base[i] != '\0')
 	{
-		if (**str == '-')
-			count++;
-		*(str++);
+		if (base[i] == '+' || base[i] == '-')
+			return (1);
+		i++;
 	}
-	if (count % 2 == 0)
-		return (0);
-	else
-		return (1);
-}
-	
-int	ft_atoi(char *str)
-{
-	int	n;
-	int	min;
-	
-	min = 1;
-	n = 0;
-	ft_isspace(str);
-	if(ft_pn(&str))
-		min *= -1;
-	while (*str != 0)
+	i = 0;
+	while (base[i] != '\0')
 	{
-		if(*str >= '0' && *str <= '9')
+		j = i + 1;
+		while (base[j] != '\0')
 		{
-			n = 10 * n + (*str - '0');
-			str++;
+			if (base[i] == base[j])
+				return (1);
+			j++;
 		}
-		else
-		{
-			if (min == -1)
-				return (-1 * n);
-			return (n);
-		}
+		i++;
 	}
 	return (0);
+}
+
+int	ch_leng(char *base)
+{
+	int	i;
+
+	i = 0;
+	while (base[i] != '\0')
+		i++;
+	return (i);
+}
+
+void	recur_putchar(int nbr, char *base, int leng_base)
+{
+	char	a;
+
+	if (nbr == 0)
+		return ;
+	if (nbr < 0)
+	{
+		a = base[-(nbr % leng_base)];
+		recur_putchar((nbr / leng_base), base, leng_base);
+		write (1, &a, 1);
+	}
+	else
+	{
+		a = base[nbr % leng_base];
+		recur_putchar((nbr / leng_base), base, leng_base);
+		write (1, &a, 1);
+	}
+}
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	int		leng_base;
+	char	zero;
+
+	leng_base = ch_leng(base);
+	if (leng_base == 0 || leng_base == 1 || ch_base(base))
+		return ;
+	if (nbr == 0)
+	{
+		zero = base[0];
+		write(1, &zero, 1);
+		return ;
+	}
+	if (nbr < 0)
+		write(1, "-", 1);
+	recur_putchar(nbr, base, leng_base);
 }

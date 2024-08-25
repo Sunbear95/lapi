@@ -26,3 +26,20 @@ int main(void)
 	do_test(0, 10);
 	return 0;
 }
+
+int	*ft_range(int min, int max)
+{
+	int	*arr;
+	int	i;
+
+	if (max <= min)
+		return (0);
+	i = 0;
+	arr = (int *)malloc(sizeof(int) * (max - min + 1));
+	while (i < (max - min))
+	{
+		arr[i] = min + i;
+		i++;
+	}
+	return (arr);
+}

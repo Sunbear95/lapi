@@ -14,11 +14,14 @@ int	ft_is_prime(int nb)
 {
 	int opti;
 
-	opti = 0;
-	while (opti * opti - 1 < nb)
+	if (nb < 2)
+		return (0);
+	opti = 2;
+	while (opti * opti < nb + 1)
 	{
 		if (nb % opti == 0)
 			return (0);
+		opti++;
 	}
 	return (1);
 }
