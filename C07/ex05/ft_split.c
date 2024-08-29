@@ -37,6 +37,16 @@ int	nword(char *str)
 	return (num);
 }
 
+int	strlen(*str)
+{
+	int	i;
+	
+	i = 0;
+	while (str[i] != 0)
+		i++;
+	return(i);
+}
+
 char **ft_malloc(arr, i ,k)
 	int	j;
 
@@ -58,8 +68,31 @@ char **ft_split(char *str, char *charset)
 			while (str[j] == ' ' || str[j] == '\t' || str[j] == '\n')
 				j++;
 			k = 0;
-			while (!(str[j + k] == ' ' || str[j + k] == '\t' || str[j + k] == '\n')
+			while (!(str[j + k] == ' ' || str[j + k] == '\t' ||
+				str[j + k] == '\n' || str[j + k] == 0)
 				k++;
-			ft_malloc(arr, i , k);
-				arr[i] = (char *)malloc(sizeof(char) * (k + 1);
-			while (< k
+			arr[i] = (char *)malloc(sizeof(char) * (k + 1);
+			while (
+			arr = ft_molloc
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

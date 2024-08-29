@@ -3,19 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	printf("here");
-	while (*src)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	//*dest = '\0';
-	return (dest);
-}
-
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -26,33 +13,49 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = ft_strlen(dest);
+	while (src[i] != '\0')
+	{
+		dest[j + i] = src[i];
+		i++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
-	int		num;
-	char	*temp;
-	char	*arr; 
+	int		leng;
+	char	*arr;
 
-	if(size <= 0)
-		return ("");
-	num = 0;
+	leng = 0;
 	i = -1;
-	while(++i < size)
+	while (++i < size)
+		leng += ft_strlen(strs[i]);
+	if (size <= 0)
 	{
-		num += ft_strlen(strs[i]);
+		arr = (char *)malloc(sizeof(char) * (1));
+		arr[0] = '\0';
+		return (arr);
 	}
-	arr = (char *)malloc(sizeof(char) * (num + (i - 1) * ft_strlen(sep) + 1));
-	temp = arr;
+	arr = (char *)malloc((leng + ((size - 1) * ft_strlen(sep)) + 1));
+	arr[0] = '\0';
 	i = 0;
 	while (i < size)
 	{
-		ft_strcpy(arr, strs[i]);
-		ft_strcpy(arr, sep);
+		ft_strcat(arr, strs[i]);
+		if (i < size - 1)
+			ft_strcat(arr, sep);
 		i++;
 	}
-	write(1, "hi", 2);
-	write(1, temp, 20);
-	return (temp);
+	return (arr);
 }
 
 void	do_test(int size, char **strs, char *sep)

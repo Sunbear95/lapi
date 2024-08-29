@@ -6,23 +6,11 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 17:00:03 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/25 23:19:48 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/28 13:50:51 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	while (*src)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (dest);
-}
 
 int	ft_strlen(char *str)
 {
@@ -34,30 +22,47 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strcat(char *dest, char *src)
 {
-	int		i;
-	int		num;
-	char	*temp;
-	char	*arr; 
-	
-	if(size <= 0)
-		return ("");
-	num = 0;
+	int	i;
+	int	j;
+
 	i = 0;
-	while(i < size)
+	j = ft_strlen(dest);
+	while (src[i] != '\0')
 	{
-		num += ft_strlen(strs[i]);
+		dest[j + i] = src[i];
 		i++;
 	}
-	arr = (char *)malloc(sizeof(char) * (num + (i - 1) * ft_strlen(sep)));
-	temp = arr;
+	dest[i + j] = '\0';
+	return (dest);
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	int		i;
+	int		leng;
+	char	*arr;
+
+	leng = 0;
+	i = -1;
+	while (++i < size)
+		leng += ft_strlen(strs[i]);
+	if (size <= 0)
+	{
+		arr = (char *)malloc(sizeof(char) * (1));
+		arr[0] = '\0';
+		return (arr);
+	}
+	arr = (char *)malloc((leng + ((size - 1) * ft_strlen(sep)) + 1));
+	arr[0] = '\0';
 	i = 0;
 	while (i < size)
 	{
-		ft_strcpy(arr, strs[i]);
-		ft_strcpy(arr, sep);
+		ft_strcat(arr, strs[i]);
+		if (i < size - 1)
+			ft_strcat(arr, sep);
 		i++;
 	}
-	return (temp);
+	return (arr);
 }
