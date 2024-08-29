@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:10:50 by jyoo              #+#    #+#             */
-/*   Updated: 2024/08/26 22:16:01 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/08/29 18:48:11 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,12 @@ int	strlen(*str)
 	return(i);
 }
 
-char **ft_malloc(arr, i ,k)
-	int	j;
-
-	j = 0
-
 char **ft_split(char *str, char *charset)
 {
 	int		i;
 	int		j;
 	int		k;
-	char	**arr;
+	char	arr[10000];
 
 	i = 0;
 	while (i < nword(str))
