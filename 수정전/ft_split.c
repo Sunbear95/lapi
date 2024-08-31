@@ -12,41 +12,50 @@
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 int	ft_strcmp(char *s1, char *s2, int i)
 {
 	int	j;
 
 	j = 0;
-	while (s2[j] != '\0')
+	while (s1[i] != s2[j])
 	{
-		if (s1[i] == s2[j])
-			return (0);
+		if (s1[i] ==  s2[i] || s2[j] == 0)
+			break ;
 		j++;
 	}
-	return (1);
+	return (s1[i] - s2[j]);
 }
 
 char	*ft_range(int min, int max, char *str)
 {
 	char	*arr;
-	int		i;
+	int	i;
 
-	arr = (char *)malloc(sizeof(char) * (max - min + 1));
+	if (max <= min)
+		return (0);
 	i = 0;
-	while (min < max)
-		arr[i++] = str[min++];
-	arr[i] = '\0';
+	arr = (char *)malloc(sizeof(char) * (max - min));
+	while (i < (max - min - 1))
+	{
+		arr[i] = str[min + i + 1];
+		i++;
+	}
+	arr[max - min - 1] = '\0';
 	return (arr);
+}
+
+int	ch_charset(int j, char *str, char *charset)
+{
+	int	i;
+
+	i = 0;
+	while (charset[i] != 0)
+	{
+		if (str[j + 1] == charset[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	**ft_split(char *str, char *charset)
@@ -57,21 +66,21 @@ char	**ft_split(char *str, char *charset)
 	char	**arr;
 
 	i = 0;
-	k = 0;
+	k = -1;
 	j = 0;
-	arr = (char **)malloc(sizeof(char *) * (ft_strlen(str) + 1));
+	while (str[i] != 0)
+		i++;
+	arr = (char **)malloc(sizeof(char) * (i + 1));
+	i = 0;
 	while (str[i])
 	{
-		if (!ft_strcmp(str, charset, i))
-		{
-			if (i > j)
-				arr[k++] = ft_range(j, i, str);
-			j = i + 1;
+		if (ft_strcmp(str, charset, i) == 0  || !str[i + 1])
+		{	
+			arr[++k] = ft_range(j, i, str);
+			j = i;
 		}
+		else if (
 		i++;
 	}
-	if (i > j)
-		arr[k++] = ft_range(j, i, str);
-	arr[k] = NULL;
 	return (arr);
 }
