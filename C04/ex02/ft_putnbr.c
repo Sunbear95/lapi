@@ -25,6 +25,7 @@ void	arry_rev(char *str, int c)
 	while (r >= 0)
 	{
 		write (1, &str[r], 1);
+		write (1, "\n", 1);
 		r--;
 	}
 }
