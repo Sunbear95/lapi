@@ -12,13 +12,14 @@
 
 void	*memset(void *ptr, int value, size_t num)
 {
-	int	i;
+  unsigned char *ucptr;
+  unsigned char ucvalue;
+	int i;
 
+  ucptr = (unsigned char *) ptr;
+  ucvalue = (unsigned char) value;
 	i = -1;
 	while (++i <= num)
-	{
-		if (ptr[i] == 0)
-			return (0);
-		ptr[i] = value;
-	}
+		ucptr[i] = ucvalue;
+  return ((void *) ucptr);
 }
