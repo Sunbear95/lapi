@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:30:05 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/04 20:34:35 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/04 20:44:14 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/04 20:58:58 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(void *ptr, int value, size_t num)
+int	memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	int	i;
-	unsigned char	*usptr;
-	unsigned char	usvalue;
+	unsigned char	*ucptr1;
+	unsigned char	*ucptr2;
 
-	usptr = (unsigned char *) ptr;
-	usvalue = (unsigned char) value;
+	i = -1;
+	ucptr1 = (unsigned char *)ptr1;
+	ucptr2 = (unsigned char *)ptr2;
 
-	i = 0;
-	while (usptr[i] != usvalue)
-		i++
-	if (usptr[i] == 0)
-		return (0);
-	return ((void) usptr[i]);
+	while (ucptr1[++i] != 0)
+	{
+		if (ucptr2[i] != ucptr1[i])
+			return (ucptr1[i] - ucptr2[i]);
+	}
+	return (0);
 }

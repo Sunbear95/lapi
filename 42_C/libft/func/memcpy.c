@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:30:05 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/04 20:34:35 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/04 21:36:46 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/04 21:47:40 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(void *ptr, int value, size_t num)
+void	*memcpy(void *dest, const void *source, size_t num)
 {
-	int	i;
-	unsigned char	*usptr;
-	unsigned char	usvalue;
 
-	usptr = (unsigned char *) ptr;
-	usvalue = (unsigned char) value;
-
-	i = 0;
-	while (usptr[i] != usvalue)
-		i++
-	if (usptr[i] == 0)
-		return (0);
-	return ((void) usptr[i]);
-}
