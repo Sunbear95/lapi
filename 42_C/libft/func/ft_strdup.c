@@ -1,15 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 21:36:46 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/04 21:47:40 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/25 16:18:49 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 16:33:09 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+#include <stdlib.h>
 
-void	*memcpy(void *dest, const void *source, size_t num)
+char	*ft_strdup(const char *src)
 {
+	const char	*copy;
 
+	copy = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
+	ft_strlcpy(copy, src, ft_strlen(src));
+	return (copy);
+}

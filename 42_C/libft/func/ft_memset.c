@@ -9,17 +9,18 @@
 /*   Updated: 2024/10/03 11:17:30 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void	*memset(void *ptr, int value, size_t num)
 {
-  unsigned char *ucptr;
-  unsigned char ucvalue;
-	int i;
+	unsigned char *ucptr;
+	unsigned char ucvalue;
+	size_t i;
 
-  ucptr = (unsigned char *) ptr;
-  ucvalue = (unsigned char) value;
+ 	ucptr = (unsigned char *) ptr;
+	ucvalue = (unsigned char) value;
 	i = -1;
 	while (++i <= num)
 		ucptr[i] = ucvalue;
-  return ((void *) ucptr);
+	return ((void *) ucptr);
 }

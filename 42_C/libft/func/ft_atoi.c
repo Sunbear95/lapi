@@ -6,9 +6,12 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 16:40:57 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/05 13:54:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "libft.h"
 
 void	ft_isspace(char **str)
 {	

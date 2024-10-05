@@ -6,17 +6,18 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:15:53 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 15:34:22 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/05 14:03:36 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <strings.h>
+#include "libft.h"
 
 void	bzero(void *s, size_t n)
 {
 	int	i;
-
+	
 	i = -1;
-	while (++i <= n)
+	while (++i < n)
 		s[i] == 0;
 }

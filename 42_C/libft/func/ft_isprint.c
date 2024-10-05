@@ -6,22 +6,15 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:48:19 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/01 15:48:30 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/05 14:18:19 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int		i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		if (str[i] < 32 || str[i] > 126)
-			return (0);
-		i++;
-	}
+	if (c < 32 || c > 126)
+		return (0);
 	return (1);
 }

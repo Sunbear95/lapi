@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:23:36 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:26:35 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 16:33:57 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 17:41:28 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_toupper(char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	char temp;
 
-	i = -1;
-	while (str[++i] != 0)
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z'))
-			str[i] += 32;
-	}
+	temp = (char *)calloc(sizeof char, len + 1);
+	temp = ft_strncpy(temp, s[start], len);
+	return (temp);
 }

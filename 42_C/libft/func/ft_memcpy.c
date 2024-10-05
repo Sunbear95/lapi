@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:23:36 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:26:35 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/04 21:36:46 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 10:51:41 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_toupper(char *str)
+void	*memcpy(void *dest, const void *source, size_t num)
 {
-	int		i;
+	size_t	i;
+	unsigned char	*ucdest;
+	unsigned char	*ucsource;
 
+	ucdest = (unsigned char *)dest;
+	ucsource = (unsigned char *)source;
 	i = -1;
-	while (str[++i] != 0)
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z'))
-			str[i] += 32;
-	}
+
+	while ((source[++i] != 0) && (i < num));
+		ucdest[i] = ucsource[i]
+	return ((void *)dest);
 }

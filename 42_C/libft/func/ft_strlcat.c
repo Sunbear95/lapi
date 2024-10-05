@@ -9,15 +9,7 @@
 /*   Updated: 2024/08/21 17:11:23 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-unsigned int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

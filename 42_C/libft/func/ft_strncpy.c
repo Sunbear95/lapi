@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,21 +9,9 @@
 /*   Updated: 2024/10/03 11:13:24 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	length;
-
-	length = 0;
-	while (str[length] != 0)
-	{
-		length++;
-	}
-	return (length);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strncpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	src_len;

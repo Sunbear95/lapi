@@ -6,21 +6,14 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 15:31:35 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/01 15:51:11 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/05 14:15:07 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = -1;
-	while (str[i] != 0)
-	{
-		if (str[i] < 'a' || (str[i] < 'A' && str[i] > 'z') || str[i] > 'Z')
-			return (0);
-		i++;
-	}
+	if (c < 'a' || (c < 'A' && c > 'z') || c > 'Z')
+		return (0);
 	return (1);
 }

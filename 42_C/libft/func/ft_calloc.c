@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:23:36 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:26:35 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 16:11:04 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 16:30:58 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <stdlib.h>
+#include <strings.h>
 
-void	ft_toupper(char *str)
+void	*calloc(size_t nmemb, size_t size)
 {
-	int		i;
+	unsigned char *	uctemp;
 
-	i = -1;
-	while (str[++i] != 0)
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z'))
-			str[i] += 32;
-	}
+	uctemp = (unsigned char *) malloc(sizeof(size) * nmemb);
+	uctemp = bzero((void *)uctemp, nmemb);
+	return ((void *)uctemp);
 }

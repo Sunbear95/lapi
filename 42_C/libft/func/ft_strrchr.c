@@ -9,7 +9,7 @@
 /*   Updated: 2024/10/03 14:01:35 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h"
 #include <string.h>
 
 char	*strrchr(const char *string, int c)

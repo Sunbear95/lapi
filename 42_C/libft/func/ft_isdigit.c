@@ -6,22 +6,15 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:50:28 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/01 15:50:31 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/05 14:17:16 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int	c)
 {
-	int		i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (1);
-		i++;
-	}
+	if (!(c >= '0' && c <= '9'))
+		return (1);
 	return (0);
 }
