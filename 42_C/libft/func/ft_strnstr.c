@@ -13,29 +13,15 @@
 
 void	*strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
-	int	flag;
-
+	size_t	i;
+	
 	i = -1;
-	j = 0;
-	flag = 0;
 	if (little[0] == 0)
 		return ((void *)big);
 	while (++i < len)
 	{
-		if (big[i] == little[j])
-		{
-			flag = 1;
-			j++;
-		}
-		else
-		{
-			flag = 0;
-			j = 0;
-		}
-		if (little[j] == 0)
-			return ((void) big[i]);
+		if (ft_strncmp(big + i, little, len))
+			return (big + i);
 	}
 	return (void *(0));
 }
