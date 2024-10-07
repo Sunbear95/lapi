@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:55:17 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/05 20:03:08 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/07 13:26:06 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,27 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*temp;
-	size_t	len;
-	
+	int		len0;
+	int		len1;
 
-	temp = (char *) calloc(sizeof(char) * (ft_strlen(s1)));
-	if (ft_strncmp(s1, set, ft_strlen(set)))
+	len0 = ft_strlen(s1);
+	len1 = ft_strlen(set);
+	temp = (char *) calloc(sizeof(char) * (len0 + 1);
+	if (!ft_strncmp(s1, set, len1))
 	{
-		len = ft_strlen(s1) - ft_strlen(set);
-		if (ft_strncmp(s1 + (ft_strlen(s1) - ft_strlen(set))), set, ft_strlen(set))
-			len = ft_strlen(s1) - (2 * ft_strlne(set));
+		if (!ft_strncmp(s1 + len0 - len1, set, lenq))
+		{
+			temp = ft_strdup(s1 + len0);
+			temp = (char *) malloc(sizeof(char) * (len0 -(2 * len1)));
+		}
+		temp = ft_strdup(s1 + len0);
 	}
-	else (ft_strncmp(s1 + (ft_strlen(s1) - ft_strlne(set))), set, ft_strlen(set))
-		len = ft_strlen(s1) - ft_strlen(set);
-
+	else if (!ft_strncmp(s1 + len0 - len1, set, len1))
+	{
+		temp = ft_strdup(s1);
+		temp = (char *) malloc(sizeof(char) * (len0 - len1));
+	}
+	else
+		temp = ft_strdup(s1);
+	return (temp);
+}
