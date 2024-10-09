@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/07 15:06:34 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/07 16:18:26 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	char temp;
+	int		i;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	i = 0;
+
+	temp = (char *) calloc(sizeof(char) * (ft_strlen(s) + 1));
+	while (s[++i])
+		temp[i] = f(i, s[i]);
+	temp[i] = 0;
+	return (0);
 }

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/07 16:20:09 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/07 16:37:14 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	unsigned int	i;
 
 	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	while (s[++i])
+		s[i] = f(i, s + i);
 }

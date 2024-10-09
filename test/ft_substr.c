@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 16:33:57 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 17:41:28 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char temp;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	temp = (char *)calloc(sizeof char, len + 1);
+	temp = ft_strncpy(temp, s[start], len);
+	return (temp);
 }

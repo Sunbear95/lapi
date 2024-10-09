@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/07 16:56:10 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/07 17:00:10 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strchr(const char *string, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	char	temp;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	temp = n + 'o';
+	write (fd, &temp, 1);
 }

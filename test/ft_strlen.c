@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/18 16:20:57 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/01 15:47:59 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

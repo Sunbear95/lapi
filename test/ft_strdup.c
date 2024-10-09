@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/08/25 16:18:49 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/09 14:30:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_strdup(const char *src)
 {
-	int	i;
+	char	*copy;
+	char	*temp;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	temp = (char *)src;
+	copy = (char *)malloc(sizeof(char) * ft_strlen(temp) + 1);
+	ft_strlcpy(copy, src, ft_strlen(temp));
+	return (copy);
 }

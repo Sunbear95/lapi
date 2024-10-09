@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 11:38:48 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/09 13:26:46 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+void	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	if (little[0] == 0)
+		return ((void *)big);
+	while (++i < len)
+	{
+		if (ft_strncmp(big + i, little, len))
+			return ((void *)(big + i));
+	}
+	return (0);
 }

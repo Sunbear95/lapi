@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/01 15:51:31 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 14:07:54 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+int	ft_isalnum(int num)
 {
-	int	i;
-
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	if (!((num >= '0' && num <= '9')
+			|| (num >= 'a' && num <= 'z')
+				|| (num >= 'A' && num <= 'Z')))
+		return (1);
+	return (0);
 }

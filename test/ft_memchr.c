@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/03 14:30:05 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/09 12:55:24 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+void	*memchr(const void *ptr, int value, size_t num)
 {
-	int	i;
+	size_t	i;
+	unsigned char	*usptr;
+//	unsigned char	usvalue;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	usptr = (unsigned char *) ptr;
+//	usvalue = (unsigned char) value;
+
+	i = 0;
+	while ((usptr[i] != value) && (i < num))
+		i++;
+	if (usptr[i] == 0)
+		return (0);
+	return ((void *)(usptr + i));
 }

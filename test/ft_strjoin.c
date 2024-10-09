@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 17:16:17 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 17:53:46 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*temp;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	temp = (char *)calloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	temp = ft_strncpy(temp, s1, ft_strlen(s1));
+	temp = ft_strncpy(temp[ftstrlen(s1)], s2, ft_strlen(s2));
+	return (temp);
 }

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/03 11:23:36 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/03 11:26:35 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+void	ft_toupper(char *str)
 {
-	int	i;
+	int		i;
 
 	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	while (str[++i] != 0)
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z'))
+			str[i] += 32;
+	}
 }

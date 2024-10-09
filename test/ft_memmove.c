@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/05 10:29:47 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/05 10:36:22 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+void	*ft_memmove(void* dest, const void* source, size_t num)
 {
-	int	i;
+	unsigned char	*ucdest;
+	unsigned char	*ucsource;
+	size_t	i;
 
 	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+
+	ucdest = (unsigned char *) dest;
+	ucsource = (unsigned char *)source;
+	while (++i < num)
+		ucdest[i] = ucsource[i];
+	return ((void *)ucdest);
 }

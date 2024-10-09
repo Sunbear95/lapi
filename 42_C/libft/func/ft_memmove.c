@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*memmove(void* dest, const void* source, size_t num)
+void	*ft_memmove(void* dest, const void* source, size_t num)
 {
 	unsigned char	ucdest;
 	unsigned char	ucsource;

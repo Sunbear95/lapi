@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*strnstr(const char *big, const char *little, size_t len)
+void	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	
