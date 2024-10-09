@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_range(int min, int max, char *str)
+char	*ft_range(int min, int max, const char *str)
 {
 	char	*arr;
 	int		i;
@@ -26,7 +26,7 @@ char	*ft_range(int min, int max, char *str)
 	return (arr);
 }
 
-char	**ft_split(char *str, char *c)
+char	**ft_split(char const *str, char c)
 {
 	int		i;
 	int		k;
@@ -39,7 +39,7 @@ char	**ft_split(char *str, char *c)
 	arr = (char **)malloc(sizeof(char *) * (ft_strlen(str) + 1));
 	while (str[i])
 	{
-		if (!ft_strncmp(str, c, 1))
+		if (!ft_strncmp(str, &c, 1))
 		{
 			if (i > j)
 				arr[k++] = ft_range(j, i, str);// strdup 활용가능

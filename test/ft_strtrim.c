@@ -20,10 +20,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	len0 = ft_strlen(s1);
 	len1 = ft_strlen(set);
-	temp = (char *) calloc(sizeof(char) * (len0 + 1);
+	temp = (char *) calloc(1, (len0 + 1));
 	if (!ft_strncmp(s1, set, len1))
 	{
-		if (!ft_strncmp(s1 + len0 - len1, set, lenq))
+		if (!ft_strncmp(s1 + len0 - len1, set, len1))
 		{
 			temp = ft_strdup(s1 + len0);
 			temp = (char *) malloc(sizeof(char) * (len0 -(2 * len1)));

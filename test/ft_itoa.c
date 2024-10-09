@@ -36,14 +36,14 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		num = - n;
-		temp = (char *)calloc(sizeof(char) * (num_leng(num) + 2));
+		temp = (char *)calloc(1, (num_leng(num) + 2));
 		temp[0] = '-';
 		i = 0;
 	}
 	else
 	{
 		num = n;
-		temp = (char *)calloc(sizeof(char) * (num_leng(num) + 1));
+		temp = (char *)calloc(1, (num_leng(num) + 1));
 		i = 1;
 	}
 	while (num != 0)
@@ -51,4 +51,5 @@ char	*ft_itoa(int n)
 		temp[num_leng(num) - i] = (num % 10);
 		i++;
 	}
+	return (temp);
 }
