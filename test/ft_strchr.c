@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *string, int c)
 {
-	int	i;
+	int		i;
 	char	*temp;
 
 	i = -1;

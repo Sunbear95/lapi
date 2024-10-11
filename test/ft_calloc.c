@@ -16,7 +16,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char *	uctemp;
+	unsigned char	*uctemp;
 
 	uctemp = (unsigned char *) malloc(sizeof(size) * nmemb);
 	bzero((void *)uctemp, nmemb);

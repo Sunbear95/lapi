@@ -42,7 +42,7 @@ char	**ft_split(char const *str, char c)
 		if (!ft_strncmp(str, &c, 1))
 		{
 			if (i > j)
-				arr[k++] = ft_range(j, i, str);// strdup 활용가능
+				arr[k++] = ft_range(j, i, str);
 			j = i + 1;
 		}
 		i++;

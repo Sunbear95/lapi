@@ -14,7 +14,7 @@
 #include "libft.h"
 
 void	ft_isspace(char **str)
-{	
+{
 	while (**str == ' ' || **str == '\n' || **str == '\t'
 		|| **str == '\v' || **str == '\f' || **str == '\r')
 		(*str)++;

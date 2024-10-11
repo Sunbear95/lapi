@@ -14,12 +14,11 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char temp;
+	char	*temp;
 	int		i;
 
 	i = 0;
-
-	temp = (char *) calloc(sizeof(char) * (ft_strlen(s) + 1));
+	temp = (char *) calloc(1, (ft_strlen(s) + 1));
 	while (s[++i])
 		temp[i] = f(i, s[i]);
 	temp[i] = 0;

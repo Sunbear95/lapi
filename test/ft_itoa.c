@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	num_leng (int num)
+int	num_leng(int num)
 {
-	int	leng;
+	int		leng;
 
 	leng = 0;
 	if (num == 0)
@@ -32,10 +32,10 @@ char	*ft_itoa(int n)
 	char	*temp;
 	int		i;
 	int		num;
-	
+
 	if (n < 0)
 	{
-		num = - n;
+		num = -n;
 		temp = (char *)calloc(1, (num_leng(num) + 2));
 		temp[0] = '-';
 		i = 0;

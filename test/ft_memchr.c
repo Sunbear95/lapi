@@ -9,17 +9,15 @@
 /*   Updated: 2024/10/09 12:55:24 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*memchr(const void *ptr, int value, size_t num)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*usptr;
-//	unsigned char	usvalue;
 
 	usptr = (unsigned char *) ptr;
-//	usvalue = (unsigned char) value;
-
 	i = 0;
 	while ((usptr[i] != value) && (i < num))
 		i++;

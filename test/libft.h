@@ -24,7 +24,7 @@ int			ft_tolower(int c);
 char		*ft_strchr(const char *string, int c);
 char		*ft_strrchr(const char *string, int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memchr(void *ptr, int value, size_t num);
+void	*ft_memchr(const void *ptr, int value, size_t num);
 int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 void	*ft_strnstr(const char *big, const char *little, size_t len);
 int			ft_atoi(char *str);
@@ -44,7 +44,11 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	 ft_putnbr_fd(int n, int fd);
 
-
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 //to_do_list
 
