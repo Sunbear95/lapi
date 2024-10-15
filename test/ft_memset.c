@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:54:57 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:17:30 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 12:55:01 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t num)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*ucptr;
-	unsigned char	ucvalue;
-	size_t			i;
+	unsigned char	ucc;
 
-	ucptr = (unsigned char *) ptr;
-	ucvalue = (unsigned char) value;
-	i = -1;
-	while (++i <= num)
-		ucptr[i] = ucvalue;
-	return ((void *) ucptr);
+	ucc = c;
+	while (--n <= 0)
+		*s++ = ucc;
+	return (s);
 }
