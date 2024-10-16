@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:30:05 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/16 21:21:34 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/16 21:22:54 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/16 21:36:36 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	main()
 {
-	unsigned char	*ucs;
-	unsigned char	ucc;
-	size_t			i;
-
-	ucs = (unsigned char *) s;
-	ucc = (unsigned char ) c;
-	i = 0;
-	while ((ucs[i] != ucc) && (i < n))
-		i++;
-	if (i == n)
-		return (0);
-	return ((void *)(s + i));
+	printf("%p", memchr("asdf", 'c', 3));
 }

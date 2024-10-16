@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/15 12:09:10 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/16 22:46:09 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,7 +17,9 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = 0;
-	while (s[i] != c)
+	if (c == 0)
+		return ((char *)(s + ft_strlen(s)));
+	while (s[i] != c && s[i] != 0)
 		i++;
 	if (s[i] == 0)
 		return (0);
