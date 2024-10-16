@@ -6,17 +6,19 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:54:57 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/15 12:55:01 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 16:07:05 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	ucc;
+	size_t			i;
+	unsigned char	*ucc;
 
-	ucc = c;
-	while (--n <= 0)
-		*s++ = ucc;
-	return (s);
+	i = -1;
+	ucc = (unsigned char *) s;
+	while (++i < n)
+		ucc[i] = c;
+	return (ucc);
 }

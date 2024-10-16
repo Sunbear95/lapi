@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:51:31 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/15 11:21:31 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 15:51:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_alpha(c) || ft_isdigit (c))
+	if (ft_isalpha(c) || ft_isdigit (c))
 		return (1);
 	return (0);
 }

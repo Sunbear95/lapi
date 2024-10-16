@@ -16,10 +16,10 @@ void	*ft_memset(void *ptr, int value, size_t num);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *source, size_t num);
 void	*ft_memmove(void *dest, const void *source, size_t num);
-unsigned int				ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 unsigned int				ft_strlcat(char *dest, char *src, unsigned int size);
 
-void			ft_toupper(char *str);
+int			ft_toupper(int c);
 int			ft_tolower(int c);
 char		*ft_strchr(const char *string, int c);
 char		*ft_strrchr(const char *string, int c);
