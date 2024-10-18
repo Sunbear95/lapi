@@ -6,10 +6,11 @@
 /*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:38:48 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/18 02:33:44 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/18 02:53:09 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
