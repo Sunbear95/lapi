@@ -6,64 +6,44 @@
 /*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:55:17 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/18 06:11:40 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/20 21:39:32 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countft(char const *s1, char const *set)
+size_t	ft_countft(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		count;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	count = 0;
-	while (set[i])
-	{
-		while (s1[j] == set[i])
-		{
-			count++;
-			j++;
-		}
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	return (count);
+	return (i);
 }
 
-int	ft_counted(char const *s1, char const *set, size_t len)
+size_t	ft_counted(char const *s1, char const *set, size_t len)
 {
-	int		i;
-	int		j;
-	int		count;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	count = 0;
-	while (set[i])
-	{
-		while (s1[len - j - 1] == set[i])
-		{
-			count++;
-			j++;
-		}
+	while (i < len && ft_strchr(set, s1[len - i - 1]))
 		i++;
-	}
-	return (len - count);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*temp;
 	size_t	len;
-	int		frt;
-	int		end;
+	size_t	frt;
+	size_t	end;
 
 	len = ft_strlen(s1);
 	frt = ft_countft(s1, set);
 	end = ft_counted(s1, set, len);
-	temp = ft_substr(s1, frt, end - frt);
+	if (len < end + frt)
+		return (ft_strdup (""));
+	temp = ft_substr(s1, frt, len - end - frt);
 	return (temp);
 }

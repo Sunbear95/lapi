@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/yujaeil/Desktop/git/lapi/test/ft_itoa'
+relocations:     []
+...
