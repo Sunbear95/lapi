@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:56:10 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/22 04:01:27 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/22 16:26:41 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_putnbr_fd(int n, int fd)
 	int		len;
 
 	if (n == -2147483648)
+	{
 		write (fd, "-2147483648", 11);
+		return ;
+	}
 	if (n == 0)
 		write (fd, "0", 1);
 	len = ft_numleng(n);
