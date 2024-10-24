@@ -3,39 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
+/*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:55:17 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/07 13:26:06 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/20 21:39:32 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_countft(char const *s1, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	return (i);
+}
+
+size_t	ft_counted(char const *s1, char const *set, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len && ft_strchr(set, s1[len - i - 1]))
+		i++;
+	return (i);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*temp;
-	int		len0;
-	int		len1;
+	size_t	len;
+	size_t	frt;
+	size_t	end;
 
-	len0 = ft_strlen(s1);
-	len1 = ft_strlen(set);
-	temp = (char *) calloc(sizeof(char) * (len0 + 1);
-	if (!ft_strncmp(s1, set, len1))
-	{
-		if (!ft_strncmp(s1 + len0 - len1, set, lenq))
-		{
-			temp = ft_strdup(s1 + len0);
-			temp = (char *) malloc(sizeof(char) * (len0 -(2 * len1)));
-		}
-		temp = ft_strdup(s1 + len0);
-	}
-	else if (!ft_strncmp(s1 + len0 - len1, set, len1))
-	{
-		temp = ft_strdup(s1);
-		temp = (char *) malloc(sizeof(char) * (len0 - len1));
-	}
-	else
-		temp = ft_strdup(s1);
+	len = ft_strlen(s1);
+	frt = ft_countft(s1, set);
+	end = ft_counted(s1, set, len);
+	if (len < end + frt)
+		return (ft_strdup (""));
+	temp = ft_substr(s1, frt, len - end - frt);
 	return (temp);
 }

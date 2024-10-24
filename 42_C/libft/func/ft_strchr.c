@@ -6,17 +6,22 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:35:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/03 11:45:00 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/16 22:46:09 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <string.h>
 
-char	*ft_strchr(const char *string, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
-	i = -1;
-	while (string[++i] != c)
-	return (string[i]);
+	i = 0;
+	if (c == 0)
+		return ((char *)(s + ft_strlen(s)));
+	while (s[i] != c && s[i] != 0)
+		i++;
+	if (s[i] == 0)
+		return (0);
+	return ((char *)(s + i));
 }

@@ -6,17 +6,15 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:51:31 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/05 14:07:54 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 15:51:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int num)
+int	ft_isalnum(int c)
 {
-	if (!((num >= '0' && num <= '9')
-			|| (num >= 'a' && num <= 'z'
-				|| num >= 'A' && num <= 'Z')))
+	if (ft_isalpha(c) || ft_isdigit (c))
 		return (1);
 	return (0);
 }

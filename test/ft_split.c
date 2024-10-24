@@ -6,13 +6,13 @@
 /*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:10:50 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/24 12:34:07 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/24 21:43:27 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include "libft.h"
 
-size_t	ft_strlen_c(char const *s, char c)
+static size_t	ft_strlen_c(char const *s, char c)
 {
 	int		i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen_c(char const *s, char c)
 	return (i);
 }
 
-void	freeall(char **temp, int j)
+static void	freeall(char **temp, int j)
 {
 	while (--j)
 		free(temp[j]);
@@ -32,7 +32,7 @@ void	freeall(char **temp, int j)
 }
 
 char	**ft_split(char	const *s, char c)
-{
+{o
 	char	**temp;
 	int		i;
 	int		j;
@@ -57,4 +57,4 @@ char	**ft_split(char	const *s, char c)
 	temp = (char **)malloc (sizeof (char) * ti + 1);
 	temp[ti] = 0;
 	return (temp);
-}
+}*/

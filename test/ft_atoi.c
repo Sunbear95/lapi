@@ -6,21 +6,21 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/17 00:30:44 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/24 21:49:08 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_isspace(char **str)
+static void	ft_isspace(const char **str)
 {
 	while (**str == ' ' || **str == '\n' || **str == '\t'
 		|| **str == '\v' || **str == '\f' || **str == '\r')
 		(*str)++;
 }
 
-int	ft_pn(char **str)
+static int	ft_pn(const char **str)
 {
 	int	count;
 	int	i;
@@ -42,7 +42,7 @@ int	ft_pn(char **str)
 		return (1);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	n;
 	int	pn;

@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-int	ft_power(int n, int time)
+static int	ft_power(int n, int time)
 {
 	int		temp;
 
@@ -23,7 +23,7 @@ int	ft_power(int n, int time)
 	return (temp);
 }
 
-int	ft_numleng(int n)
+static int	ft_numleng(int n)
 {
 	int		temp;
 

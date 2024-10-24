@@ -5,50 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 13:51:13 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/07 15:03:38 by jyoo             ###   ########.fr       */
+/*   Created: 2024/10/21 23:24:30 by jyoo              #+#    #+#             */
+/*   Updated: 2024/10/22 00:41:25 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_leng (int num)
+size_t	ft_numleng(int n)
 {
-	int	leng;
+	size_t	i;
 
-	leng = 0;
-	if (num == 0)
-		return (1);
-	while (num > 0)
+	i = 0;
+	while (n != 0)
 	{
-		leng++;
-		num /= 10;
+		n /= 10;
+		i++;
 	}
-	return (leng);
+	return (i);
+}
+
+char	*ft_itoasub(int n, int len, char *arr)
+{
+	int		i;
+
+	if (n == -2147483648)
+		return ("-2147483648");
+	if (n < 0)
+	{
+		n *= -1;
+		arr[0] = '-';
+		len++;
+	}
+	i = 0;
+	while (n != 0)
+	{
+		arr[len - i - 1] = n % 10 + '0';
+		n /= 10;
+		i++;
+	}
+	arr[len] = '\0';
+	return (arr);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*temp;
-	int		i;
-	int		num;
-	
-	if (n < 0)
-	{
-		num = - n;
-		temp = (char *)calloc(sizeof(char) * (num_leng(num) + 2));
-		temp[0] = '-';
-		i = 0;
-	}
-	else
-	{
-		num = n;
-		temp = (char *)calloc(sizeof(char) * (num_leng(num) + 1));
-		i = 1;
-	}
-	while (num != 0)
-	{
-		temp[num_leng(num) - i] = (num % 10);
-		i++;
-	}
+	char	*arr;
+	int		len;
+
+	if (n == 0)
+		return ("0");
+	len = ft_numleng(n);
+	arr = (char *)ft_calloc(len + 1, sizeof (char));
+	arr = ft_itoasub(n, len, arr);
+	return (arr);
 }

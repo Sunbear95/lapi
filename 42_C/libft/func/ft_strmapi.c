@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 15:06:34 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/07 16:18:26 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/17 19:29:37 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char temp;
+	char	*temp;
 	int		i;
 
-	i = 0;
-
-	temp = (char *) calloc(sizeof(char) * (ft_strlen(s) + 1));
+	i = -1;
+	temp = (char *) ft_calloc(ft_strlen(s) + 1, sizeof (char));
 	while (s[++i])
 		temp[i] = f(i, s[i]);
 	temp[i] = 0;
-	return (0);
+	return (temp);
 }

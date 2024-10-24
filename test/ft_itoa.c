@@ -6,13 +6,13 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 23:24:30 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/22 00:41:25 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/24 22:36:37 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numleng(int n)
+static size_t	ft_numleng(int n)
 {
 	size_t	i;
 
@@ -25,17 +25,16 @@ size_t	ft_numleng(int n)
 	return (i);
 }
 
-char	*ft_itoasub(int n, int len, char *arr)
+static char	*ft_itoasub(int n, int len, char *arr)
 {
 	int		i;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		n *= -1;
 		arr[0] = '-';
-		len++;
 	}
 	i = 0;
 	while (n != 0)
@@ -54,9 +53,13 @@ char	*ft_itoa(int n)
 	int		len;
 
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	len = ft_numleng(n);
+	if (n < 0)
+		len++;
 	arr = (char *)ft_calloc(len + 1, sizeof (char));
+	if (!arr)
+		return (0);
 	arr = ft_itoasub(n, len, arr);
 	return (arr);
 }

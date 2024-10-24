@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:30:05 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/16 21:21:34 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/24 23:00:30 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ucs = (unsigned char *) s;
 	ucc = (unsigned char ) c;
 	i = 0;
-	while ((ucs[i] != ucc) && (i < n))
+	while ((i < n) && (ucs[i] != ucc))
 		i++;
 	if (i == n)
 		return (0);

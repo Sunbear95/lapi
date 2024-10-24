@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 18:37:01 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/05 13:54:27 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/17 00:30:44 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 
 void	ft_isspace(char **str)
-{	
+{
 	while (**str == ' ' || **str == '\n' || **str == '\t'
 		|| **str == '\v' || **str == '\f' || **str == '\r')
 		(*str)++;
@@ -23,16 +23,21 @@ void	ft_isspace(char **str)
 int	ft_pn(char **str)
 {
 	int	count;
+	int	i;
 
 	count = 0;
+	i = 0;
 	while (**str == '-' || **str == '+')
 	{
 		if (**str == '-')
 			count++;
 		(*str)++;
+		i++;
 	}
-	if (count % 2 == 0)
+	if (i > 1)
 		return (0);
+	else if (count == 1)
+		return (-1);
 	else
 		return (1);
 }
@@ -40,13 +45,13 @@ int	ft_pn(char **str)
 int	ft_atoi(char *str)
 {
 	int	n;
-	int	min;
+	int	pn;
 
-	min = 1;
 	n = 0;
 	ft_isspace(&str);
-	if (ft_pn(&str))
-		min *= -1;
+	pn = ft_pn(&str);
+	if (pn == 0)
+		return (0);
 	while (*str != 0)
 	{
 		if (*str >= '0' && *str <= '9')
@@ -55,11 +60,7 @@ int	ft_atoi(char *str)
 			str++;
 		}
 		else
-		{
-			if (min == -1)
-				return (-1 * n);
-			return (n);
-		}
+			return (pn * n);
 	}
-	return (min * n);
+	return (pn * n);
 }

@@ -6,7 +6,7 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:05:11 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/01 15:32:35 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 11:30:18 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,6 +14,6 @@
 int	ft_isascii(int a)
 {
 	if (a >= 0 && a <= 127)
-		return (a);
+		return (1);
 	return (0);
 }

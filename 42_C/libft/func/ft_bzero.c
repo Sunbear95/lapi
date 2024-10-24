@@ -6,18 +6,13 @@
 /*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:15:53 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/05 14:03:36 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/15 12:56:12 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-	
-	i = -1;
-	while (++i < n)
-		s[i] == 0;
+	ft_memset(s, 0, n);
 }
