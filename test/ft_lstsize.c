@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyoo <jyoo@student.42gyeonsan.kr>          +#+  +:+       +#+        */
+/*   By: jyoo <jyoo@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 13:46:38 by jyoo              #+#    #+#             */
-/*   Updated: 2024/10/11 15:29:35 by jyoo             ###   ########.fr       */
+/*   Updated: 2024/10/24 01:09:50 by jyoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	t_list	*p;
+	int		i;
 
-	i = 0;
-	while (next)
+	p = lst;
+	i =  0;
+	while (p->next)
 	{
-		t_list->next->next;
+		p = p -> next;
 		i++;
 	}
 	return (i);
