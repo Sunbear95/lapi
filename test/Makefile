@@ -48,15 +48,6 @@ SRCS = ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS_SRCS = 	ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstclear.c \
-	ft_lstiter.c \
-	ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS :.c = .o)
@@ -66,10 +57,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
-bonus: $(BONUS_OBJS)
-	ar rc $(NAME) $(BONUS_OBJS)
 	ranlib $(NAME)
 
 %.o: %.c
